@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.title = "Đăng nhập - Trang chủ sinh viên";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<h2>Đăng nhập</h2>
+<form action="@Url.Action("Login", "Account")" method="post">
+    <div class="form-group">
+        <label for="tenDangNhap">Tên đăng nhập</label>
+        <input id="tenDangNhap" class="form-control" type="text" name="tenDangNhap" />
+    </div>
+    <div class="form-group">
+        <label for="matKhau">Mật khẩu</label>
+        <input id="matKhau" class="form-control" type="password" name="matKhau" />
+    </div>
+@*    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="ghiNho" name="ghiNho" />
+        <label class="form-check-label" for="ghiNho">Ghi nhớ tài khoản</label>
+    </div>*@
+    <div style="color:red; margin-bottom:5px">
+        @ViewBag.Error
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Đăng nhập</button>
+    <br />
+    <a style="text-decoration:none;" href="@Url.Action("DangKy","Account")">Đăng ký</a>
+</form>

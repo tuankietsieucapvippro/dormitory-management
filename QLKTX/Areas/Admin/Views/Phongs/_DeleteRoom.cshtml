@@ -1,0 +1,35 @@
+﻿@model QLKTX.Models.Phong
+
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="DeleteModalLabel">Xác nhận xóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Delete", "Phongs", FormMethod.Post, new { id = "deleteForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <!-- Các trường và nút xác nhận xóa -->
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Phòng
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.TenPhong)
+                        </dd>
+                    </dl>
+                    <h5>Bạn có chắc chắn muốn xóa không ?</h5>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                <button type="submit" class="btn btn-danger" form="deleteForm" id="confirmDeleteBtn" data-id="@Model.PhongID">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+

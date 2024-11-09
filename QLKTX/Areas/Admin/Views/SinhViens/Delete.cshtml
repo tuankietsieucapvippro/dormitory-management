@@ -1,0 +1,25 @@
+﻿@model QLKTX.Models.SinhVien
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>Bạn có chắc muốn xóa sinh viên này?</h3>
+<div>
+    <div><strong>Họ và tên:</strong></div>
+    <div>@Model.HoSV @Model.TenSV</div>
+    <div><strong>MSSV:</strong></div>
+    <div>@Model.MSSV</div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

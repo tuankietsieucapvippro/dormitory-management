@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLKTXModelStoreContainer" CdmEntityContainer="QLKTXEntities">
+    <EntitySetMapping Name="DienNuocs">
+      <EntityTypeMapping TypeName="QLKTXModel.DienNuoc">
+        <MappingFragment StoreEntitySet="DienNuoc">
+          <ScalarProperty Name="DienNuocID" ColumnName="DienNuocID" />
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="TuNgay" ColumnName="TuNgay" />
+          <ScalarProperty Name="DenNgay" ColumnName="DenNgay" />
+          <ScalarProperty Name="ChiSoDienCu" ColumnName="ChiSoDienCu" />
+          <ScalarProperty Name="ChiSoDienMoi" ColumnName="ChiSoDienMoi" />
+          <ScalarProperty Name="ChiSoNuocCu" ColumnName="ChiSoNuocCu" />
+          <ScalarProperty Name="ChiSoNuocMoi" ColumnName="ChiSoNuocMoi" />
+          <ScalarProperty Name="DonGiaDien" ColumnName="DonGiaDien" />
+          <ScalarProperty Name="DonGiaNuoc" ColumnName="DonGiaNuoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DKPhongs">
+      <EntityTypeMapping TypeName="QLKTXModel.DKPhong">
+        <MappingFragment StoreEntitySet="DKPhong">
+          <ScalarProperty Name="DKPhongID" ColumnName="DKPhongID" />
+          <ScalarProperty Name="SinhVienID" ColumnName="SinhVienID" />
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="NgayDK" ColumnName="NgayDK" />
+          <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="QLKTXModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="HoaDonID" ColumnName="HoaDonID" />
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="DienNuocID" ColumnName="DienNuocID" />
+          <ScalarProperty Name="NgayLapHD" ColumnName="NgayLapHD" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiPhongs">
+      <EntityTypeMapping TypeName="QLKTXModel.LoaiPhong">
+        <MappingFragment StoreEntitySet="LoaiPhong">
+          <ScalarProperty Name="LoaiPhongID" ColumnName="LoaiPhongID" />
+          <ScalarProperty Name="TenLoaiPhong" ColumnName="TenLoaiPhong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="QLKTXModel.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="ToaNhaID" ColumnName="ToaNhaID" />
+          <ScalarProperty Name="LoaiPhongID" ColumnName="LoaiPhongID" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="SoLuongGiuong" ColumnName="SoLuongGiuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="QLKTXModel.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="SinhVienID" ColumnName="SinhVienID" />
+          <ScalarProperty Name="HoSV" ColumnName="HoSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
+          <ScalarProperty Name="Lop" ColumnName="Lop" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="SoCCCD" ColumnName="SoCCCD" />
+          <ScalarProperty Name="TaiKhoanID" ColumnName="TaiKhoanID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLKTXModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="QLKTXModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="TaiKhoanID" ColumnName="TaiKhoanID" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="VaiTroID" ColumnName="VaiTroID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ToaNhas">
+      <EntityTypeMapping TypeName="QLKTXModel.ToaNha">
+        <MappingFragment StoreEntitySet="ToaNha">
+          <ScalarProperty Name="ToaNhaID" ColumnName="ToaNhaID" />
+          <ScalarProperty Name="TenToaNha" ColumnName="TenToaNha" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VaiTroes">
+      <EntityTypeMapping TypeName="QLKTXModel.VaiTro">
+        <MappingFragment StoreEntitySet="VaiTro">
+          <ScalarProperty Name="VaiTroID" ColumnName="VaiTroID" />
+          <ScalarProperty Name="TenVaiTro" ColumnName="TenVaiTro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLKTXModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLKTXModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLKTXModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLKTXModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLKTXModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLKTXModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLKTXModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLKTXModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLKTXModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

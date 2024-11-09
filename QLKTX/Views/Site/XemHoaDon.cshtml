@@ -1,0 +1,31 @@
+﻿@model List<QLKTX.Common.HoaDonViewModel>
+
+@{
+}
+
+<table class="table">
+    <thead class="table-active">
+        <tr>
+            <th>Ngày Lập Hóa Đơn</th>
+            <th>Tên Phòng</th>
+            <th>Tiêu Thụ Điện</th>
+            <th>Tiêu Thụ Nước</th>
+            <th>Thành Tiền</th>
+            <th>Tình trạng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hoaDon in Model)
+        {
+            <tr>
+                <td>@hoaDon.NgayLapHD.ToString("dd/MM/yyyy")</td>
+                <td>@hoaDon.TenToaNha.@hoaDon.TenPhong</td>
+                <td>@hoaDon.TieuThuDien</td>
+                <td>@hoaDon.TieuThuNuoc</td>
+                @{ var thanhTien = hoaDon.ThanhTienDien + hoaDon.ThanhTienNuoc;}
+                <td>@thanhTien</td>
+                <td>@hoaDon.TinhTrang</td>
+            </tr>
+        }
+    </tbody>
+</table>

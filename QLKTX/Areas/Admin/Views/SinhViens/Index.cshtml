@@ -1,0 +1,66 @@
+﻿@model IEnumerable<QLKTX.Models.SinhVien>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<form id="filterForm">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="ToaNhaID">Tòa nhà</label>
+            @Html.DropDownList("ToaNhaID", ViewBag.ToaNhas as SelectList, "Tất cả", new { @class = "form-control", @id = "ToaNhaID" })
+        </div>
+        <div class="form-group col-md-4">
+            <label for="PhongID">Phòng</label>
+            @Html.DropDownList("PhongID", ViewBag.Phongs as SelectList, "Tất cả", new { @class = "form-control", @id = "PhongID" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="HoTen">Họ và tên</label>
+            <input type="text" id="HoTen" name="HoTen" class="form-control" />
+        </div>
+        <div class="form-group col-md-4">
+            <label for="MSSV">MSSV</label>
+            <input type="text" id="MSSV" name="MSSV" class="form-control" />
+        </div>
+    </div>
+</form>
+
+<p>
+    @Html.ActionLink("Thêm sinh viên", "Create")
+</p>
+<div class="col-md-12">
+    <div id="sinhVienList">
+        @Html.Partial("_SinhVienList", Model)
+    </div>
+</div>
+@section tail {
+    <script>
+        $(document).ready(function () {
+            $('#ToaNhaID').change(function () {
+                var toaNhaId = $(this).val();
+                $.getJSON('@Url.Action("GetPhongsByToaNha")', { toaNhaId: toaNhaId }, function (data) {
+                    var items = '<option value="">Tất cả</option>';
+                    $.each(data, function (i, phong) {
+                        items += '<option value="' + phong.PhongID + '">' + phong.TenPhong + '</option>';
+                    });
+                    $('#PhongID').html(items);
+                });
+            });
+
+            $('#filterForm').change(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '@Url.Action("FilterSinhViens")',
+                    type: 'GET',
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        $('#sinhVienList').html(result);
+                    }
+                });
+            });
+        });
+    </script>
+}

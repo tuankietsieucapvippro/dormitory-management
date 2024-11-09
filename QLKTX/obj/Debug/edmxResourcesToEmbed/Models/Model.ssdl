@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLKTXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DienNuoc">
+    <Key>
+      <PropertyRef Name="DienNuocID" />
+    </Key>
+    <Property Name="DienNuocID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhongID" Type="int" />
+    <Property Name="TuNgay" Type="date" />
+    <Property Name="DenNgay" Type="date" />
+    <Property Name="ChiSoDienCu" Type="int" />
+    <Property Name="ChiSoDienMoi" Type="int" />
+    <Property Name="ChiSoNuocCu" Type="int" />
+    <Property Name="ChiSoNuocMoi" Type="int" />
+    <Property Name="DonGiaDien" Type="float" />
+    <Property Name="DonGiaNuoc" Type="float" />
+  </EntityType>
+  <EntityType Name="DKPhong">
+    <Key>
+      <PropertyRef Name="DKPhongID" />
+    </Key>
+    <Property Name="DKPhongID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SinhVienID" Type="int" />
+    <Property Name="PhongID" Type="int" />
+    <Property Name="NgayDK" Type="date" />
+    <Property Name="NgayTra" Type="date" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="HoaDonID" />
+    </Key>
+    <Property Name="HoaDonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhongID" Type="int" />
+    <Property Name="DienNuocID" Type="int" />
+    <Property Name="NgayLapHD" Type="date" Nullable="false" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiPhong">
+    <Key>
+      <PropertyRef Name="LoaiPhongID" />
+    </Key>
+    <Property Name="LoaiPhongID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiPhong" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DonGia" Type="float" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="PhongID" />
+    </Key>
+    <Property Name="PhongID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToaNhaID" Type="int" />
+    <Property Name="LoaiPhongID" Type="int" />
+    <Property Name="TenPhong" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="30" />
+    <Property Name="SoLuongGiuong" Type="int" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="SinhVienID" />
+    </Key>
+    <Property Name="SinhVienID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoSV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSV" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MSSV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Lop" Type="nvarchar" MaxLength="30" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="NoiSinh" Type="nvarchar" MaxLength="100" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="10" />
+    <Property Name="SoCCCD" Type="nvarchar" MaxLength="20" />
+    <Property Name="TaiKhoanID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TaiKhoanID" />
+    </Key>
+    <Property Name="TaiKhoanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VaiTroID" Type="int" />
+  </EntityType>
+  <EntityType Name="ToaNha">
+    <Key>
+      <PropertyRef Name="ToaNhaID" />
+    </Key>
+    <Property Name="ToaNhaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenToaNha" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="VaiTro">
+    <Key>
+      <PropertyRef Name="VaiTroID" />
+    </Key>
+    <Property Name="VaiTroID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenVaiTro" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__DienNuoc__PhongI__5CD6CB2B">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="DienNuoc" Type="Self.DienNuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="DienNuoc">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DKPhong__PhongID__59FA5E80">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="DKPhong" Type="Self.DKPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="DKPhong">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DKPhong__SinhVie__59063A47">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+    <End Role="DKPhong" Type="Self.DKPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinhVien">
+        <PropertyRef Name="SinhVienID" />
+      </Principal>
+      <Dependent Role="DKPhong">
+        <PropertyRef Name="SinhVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__DienNuoc__60A75C0F">
+    <End Role="DienNuoc" Type="Self.DienNuoc" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DienNuoc">
+        <PropertyRef Name="DienNuocID" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="DienNuocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__PhongID__5FB337D6">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__LoaiPhong__4E88ABD4">
+    <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiPhong">
+        <PropertyRef Name="LoaiPhongID" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="LoaiPhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__ToaNhaID__4D94879B">
+    <End Role="ToaNha" Type="Self.ToaNha" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ToaNha">
+        <PropertyRef Name="ToaNhaID" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="ToaNhaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SinhVien__TaiKho__5629CD9C">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TaiKhoanID" />
+      </Principal>
+      <Dependent Role="SinhVien">
+        <PropertyRef Name="TaiKhoanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaiKhoan__VaiTro__534D60F1">
+    <End Role="VaiTro" Type="Self.VaiTro" Multiplicity="0..1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VaiTro">
+        <PropertyRef Name="VaiTroID" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="VaiTroID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="QLKTXModelStoreContainer">
+    <EntitySet Name="DienNuoc" EntityType="Self.DienNuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DKPhong" EntityType="Self.DKPhong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiPhong" EntityType="Self.LoaiPhong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ToaNha" EntityType="Self.ToaNha" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VaiTro" EntityType="Self.VaiTro" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__DienNuoc__PhongI__5CD6CB2B" Association="Self.FK__DienNuoc__PhongI__5CD6CB2B">
+      <End Role="Phong" EntitySet="Phong" />
+      <End Role="DienNuoc" EntitySet="DienNuoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DKPhong__PhongID__59FA5E80" Association="Self.FK__DKPhong__PhongID__59FA5E80">
+      <End Role="Phong" EntitySet="Phong" />
+      <End Role="DKPhong" EntitySet="DKPhong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DKPhong__SinhVie__59063A47" Association="Self.FK__DKPhong__SinhVie__59063A47">
+      <End Role="SinhVien" EntitySet="SinhVien" />
+      <End Role="DKPhong" EntitySet="DKPhong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__DienNuoc__60A75C0F" Association="Self.FK__HoaDon__DienNuoc__60A75C0F">
+      <End Role="DienNuoc" EntitySet="DienNuoc" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__PhongID__5FB337D6" Association="Self.FK__HoaDon__PhongID__5FB337D6">
+      <End Role="Phong" EntitySet="Phong" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__LoaiPhong__4E88ABD4" Association="Self.FK__Phong__LoaiPhong__4E88ABD4">
+      <End Role="LoaiPhong" EntitySet="LoaiPhong" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__ToaNhaID__4D94879B" Association="Self.FK__Phong__ToaNhaID__4D94879B">
+      <End Role="ToaNha" EntitySet="ToaNha" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SinhVien__TaiKho__5629CD9C" Association="Self.FK__SinhVien__TaiKho__5629CD9C">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="SinhVien" EntitySet="SinhVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaiKhoan__VaiTro__534D60F1" Association="Self.FK__TaiKhoan__VaiTro__534D60F1">
+      <End Role="VaiTro" EntitySet="VaiTro" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

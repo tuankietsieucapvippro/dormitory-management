@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Ghi chỉ số điện nước</h2>
+
+<form action="@Url.Action("GhiChiSo", "DienNuocs")" method="post">
+    <input type="hidden" name="phongID" value="@ViewBag.PhongID" />
+
+    <div class="form-group">
+        <label for="chiSoDienMoi">Chỉ số điện mới</label>
+        <input type="number" class="form-control col-md-5" id="chiSoDienMoi" name="chiSoDienMoi">
+    </div>
+    <div class="form-group">
+        <label for="chiSoNuocMoi">Chỉ số nước mới</label>
+        <input type="number" class="form-control col-md-5" id="chiSoNuocMoi" name="chiSoNuocMoi">
+    </div>
+    <button type="submit" class="btn btn-primary">Ghi</button>
+</form>

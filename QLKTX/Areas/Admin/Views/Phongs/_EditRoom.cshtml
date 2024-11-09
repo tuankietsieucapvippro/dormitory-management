@@ -1,0 +1,49 @@
+﻿@model QLKTX.Models.Phong
+
+<div class="modal fade" id="EditRoomModal" tabindex="-1" role="dialog" aria-labelledby="EditRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="EditRoomModalLabel">Sửa thông tin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Edit", "Phongs", FormMethod.Post, new { id = "editForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.PhongID)
+
+                    <div class="form-group">
+                        <label for="ToaNhaID" class="control-label">Tòa nhà</label>
+                        @Html.DropDownList("ToaNhaID", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="LoaiPhongID" class="control-label">Loại phòng</label>
+                        @Html.DropDownList("LoaiPhongID", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="TenPhong" class="control-label">Tên phòng</label>
+                        @Html.EditorFor(model => model.TenPhong, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="SoLuongGiuong" class="control-label">Số lượng giường</label>
+                        @Html.EditorFor(model => model.SoLuongGiuong, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                <button type="submit" class="btn btn-primary" form="editForm" id="confirmeEditBtn" data-id="@Model.PhongID">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+

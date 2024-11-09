@@ -1,0 +1,38 @@
+﻿@model IEnumerable<QLKTX.Common.PhongViewModel>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách các phòng</h2>
+
+<table class="table">
+    <thead class="table-active">
+        <tr>
+            <th>Tòa nhà</th>
+            <th>Tên phòng</th>
+            <th>Chỉ số điện cũ</th>
+            <th>Chỉ số điện hiện tại</th>
+            <th>Chỉ số nước cũ</th>
+            <th>Chỉ số nước hiện tại</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var phong in Model)
+        {
+            <tr>
+                <td>@phong.TenToaNha</td>
+                <td>@phong.TenPhong</td>
+                <td>@(phong.ChiSoDienCu.HasValue ? phong.ChiSoDienCu.Value.ToString() : "N/A")</td>
+                <td>@(phong.ChiSoDienMoi.HasValue ? phong.ChiSoDienMoi.Value.ToString() : "N/A")</td>
+                <td>@(phong.ChiSoNuocCu.HasValue ? phong.ChiSoNuocCu.Value.ToString() : "N/A")</td>
+                <td>@(phong.ChiSoNuocMoi.HasValue ? phong.ChiSoNuocMoi.Value.ToString() : "N/A")</td>
+                <td>
+                    <a href="@Url.Action("GhiChiSo", "DienNuocs", new { phongID = phong.PhongID })" class="btn btn-primary">Ghi chỉ số</a>
+                    <a href="@Url.Action("TaoHoaDon", "DienNuocs", new { phongID = phong.PhongID })" class="btn btn-success">Tạo hóa đơn</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

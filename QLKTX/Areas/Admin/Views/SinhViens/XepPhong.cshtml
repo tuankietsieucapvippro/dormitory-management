@@ -1,0 +1,44 @@
+﻿@model QLKTX.Common.XepPhongViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xếp phòng</h2>
+
+@using (Html.BeginForm("XepPhong", "SinhViens", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.SinhVienID)
+
+    <div class="form-group col-md-5">
+        <label for="ToaNhaID" class="control-label">Tòa nhà</label>
+        @Html.DropDownListFor(model => model.SelectedToaNhaID, Model.ToaNhas, "Chọn tòa nhà", new { @class = "form-control", @id = "ToaNhaID" })
+    </div>
+
+    <div class="form-group col-md-5">
+        <label for="PhongID" class="control-label">Phòng</label>
+        @Html.DropDownListFor(model => model.SelectedPhongID, Model.Phongs, "Chọn phòng", new { @class = "form-control", @id = "PhongID" })
+    </div>
+
+    <div class="form-group col-md-5">
+        <button type="submit" class="btn btn-primary">Xếp phòng</button>
+    </div>
+}
+
+@section tail {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ToaNhaID').change(function () {
+                var toaNhaId = $(this).val();
+                $.getJSON('@Url.Action("GetPhongsByToaNha", "SinhViens")', { toaNhaID: toaNhaId }, function (data) {
+                    var items = '<option value="">Chọn phòng</option>';
+                    $.each(data, function (i, phong) {
+                        items += '<option value="' + phong.PhongID + '">' + phong.TenPhong + '</option>';
+                    });
+                    $('#PhongID').html(items);
+                });
+            });
+        });
+    </script>
+}

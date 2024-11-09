@@ -1,0 +1,47 @@
+﻿@model QLKTX.Models.Phong
+
+<div class="modal fade" id="createRoomModal" tabindex="-1" role="dialog" aria-labelledby="createRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createRoomModalLabel">Thêm phòng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form thêm mới tòa nhà -->
+                @using (Html.BeginForm("Create", "Phongs", FormMethod.Post, new { id = "createForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <label for="ToaNhaID" class="control-label">Tòa nhà</label>
+                    @Html.DropDownList("ToaNhaID", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="LoaiPhongID" class="control-label">Loại phòng</label>
+                    @Html.DropDownList("LoaiPhongID", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+
+                    <div class="form-group">
+                        <label for="TenPhong" class="control-label">Tên phòng</label>
+                        <input type="text" name="TenPhong" id="TenPhong" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="SoLuongGiuong" class="control-label">Số lượng giường</label>
+                        <input type="number" name="SoLuongGiuong" id="SoLuongGiuong" class="form-control" required />
+                    </div>
+                }
+            </div>
+            <div class="modal-footer justify-content-center">
+                <!-- Button đóng modal -->
+                <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Đóng</button>
+                <!-- Button gửi form -->
+                <button type="submit" class="btn btn-primary ml-2" form="createForm">Thêm mới</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@{ 
+    ViewBag.title = "Đăng nhập - Trang quản lý";
+}
+
+
+<h2>Đăng nhập</h2>
+<form action="~/Admin/Login/KiemTraDangNhap" method="post">
+    <div class="form-group">
+        <label>Tên đăng nhập</label>
+        <input class="form-control" type="text" name="tenDangNhap" value="@ViewBag.tenDangNhap" />
+    </div>
+    <div class="form-group">
+        <label>Mật khẩu</label>
+        <input class="form-control" type="password" name="matKhau" value="@ViewBag.matKhau" />
+    </div>
+
+    <div class="form-group">
+@*        <input type="checkbox" name="ghiNho" value="" />Ghi nhớ tài khoản <br />*@
+        <button type="submit" class="btn btn-primary mt-2">Đăng nhập</button>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</form>

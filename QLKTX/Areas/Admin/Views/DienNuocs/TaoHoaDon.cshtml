@@ -1,0 +1,78 @@
+﻿@model QLKTX.Common.HoaDonViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Tạo Hóa Đơn</h2>
+
+<form asp-action="TaoHoaDon" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="DienNuocID" value="@Model.DienNuocID" />
+    <div class="form-group">
+        <label>Ngày lập hóa đơn</label>
+        <input type="text" class="form-control" value="@Model.NgayLapHD.ToString("dd/MM/yyyy")" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Tên phòng</label>
+        <input type="text" class="form-control" value="@Model.TenPhong" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Tên tòa nhà</label>
+        <input type="text" class="form-control" value="@Model.TenToaNha" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Chỉ số điện cũ</label>
+        <input type="text" class="form-control" value="@Model.ChiSoDienCu" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Chỉ số điện mới</label>
+        <input type="text" class="form-control" value="@Model.ChiSoDienMoi" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Tiêu thụ điện</label>
+        <input type="text" class="form-control" value="@Model.TieuThuDien" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Đơn giá điện</label>
+        <input type="text" class="form-control" value="@Model.DonGiaDien" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Thành tiền điện</label>
+        <input type="text" class="form-control" value="@Model.ThanhTienDien" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Chỉ số nước cũ</label>
+        <input type="text" class="form-control" value="@Model.ChiSoNuocCu" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Chỉ số nước mới</label>
+        <input type="text" class="form-control" value="@Model.ChiSoNuocMoi" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Tiêu thụ nước</label>
+        <input type="text" class="form-control" value="@Model.TieuThuNuoc" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Đơn giá nước</label>
+        <input type="text" class="form-control" value="@Model.DonGiaNuoc" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Thành tiền nước</label>
+        <input type="text" class="form-control" value="@Model.ThanhTienNuoc" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Tạo Hóa Đơn</button>
+</form>

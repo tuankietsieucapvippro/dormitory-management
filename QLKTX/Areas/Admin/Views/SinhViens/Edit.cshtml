@@ -1,0 +1,91 @@
+﻿@model QLKTX.Models.SinhVien
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Cập nhật thông tin sinh viên</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.SinhVienID)
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Họ và tên đệm</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.HoSV, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Tên</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.TenSV, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">MSSV</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.MSSV, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Lớp</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.Lop, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Giới tính</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.GioiTinh, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Ngày sinh</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Nơi sinh</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.NoiSinh, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Địa chỉ</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.DiaChi, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Email</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Số điện thoại</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.SoDienThoai, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">CCCD</label>
+        <div class=" col-md-5">@Html.TextBoxFor(model => model.SoCCCD, new { @class = "form-control" })</div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Tài khoản</label>
+        <div class="col-md-5">
+            @Html.DropDownList("TaiKhoanID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TaiKhoanID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lưu" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "Index")
+</div>

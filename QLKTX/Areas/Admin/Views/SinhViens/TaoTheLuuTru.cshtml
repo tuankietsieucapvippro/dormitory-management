@@ -1,0 +1,31 @@
+﻿@model QLKTX.Common.TheLuuTruViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Tạo Thẻ Lưu Trú</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Họ và Tên:</dt>
+        <dd>@Model.HoTen</dd>
+
+        <dt>MSSV:</dt>
+        <dd>@Model.MSSV</dd>
+
+        <dt>Ngày Sinh:</dt>
+        @{ var ngaySinh = Model.NgaySinh.ToString("dd/MM/yyyy");}
+        <dd>@ngaySinh</dd>
+
+        <dt>Giới Tính:</dt>
+        <dd>@Model.GioiTinh</dd>
+
+        <dt>Lớp:</dt>
+        <dd>@Model.Lop</dd>
+
+        <dt>Phòng Nội Trú:</dt>
+        <dd>@Model.Phong</dd>
+    </dl>
+</div>
+<a href="#">In thẻ</a>

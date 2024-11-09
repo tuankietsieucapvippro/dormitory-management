@@ -1,0 +1,69 @@
+﻿@model QLKTX.Common.CapNhatHoSoViewModel
+
+@{
+    ViewBag.Title = "Cập Nhật Hồ Sơ";
+}
+
+<h2>Cập Nhật Hồ Sơ</h2>
+
+
+<form asp-action="CapNhatHoSo" method="post">
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.SinhVienID)
+    <table class="table table-borderless">
+        <tbody>
+            <tr>
+                <td class="float-end"><strong>Họ và tên đệm</strong></td>
+                <td>@Html.TextBoxFor(model => model.HoSV, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Tên</strong></td>
+                <td>@Html.TextBoxFor(model => model.TenSV, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>MSSV</strong></td>
+                <td>@Html.TextBoxFor(model => model.MSSV, new { @class = "form-control", @readonly = "readonly" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Lớp</strong></td>
+                <td>@Html.TextBoxFor(model => model.Lop, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Giới tính</strong></td>
+                <td>@Html.TextBoxFor(model => model.GioiTinh, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Ngày sinh</strong></td>
+                <td>@Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Nơi sinh</strong></td>
+                <td>@Html.TextBoxFor(model => model.NoiSinh, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Địa chỉ</strong></td>
+                <td>@Html.TextBoxFor(model => model.DiaChi, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Email</strong></td>
+                <td>@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Số điện thoại</strong></td>
+                <td>@Html.TextBoxFor(model => model.SoDienThoai, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td class="float-end"><strong>Số CCCD</strong></td>
+                <td>@Html.TextBoxFor(model => model.SoCCCD, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>

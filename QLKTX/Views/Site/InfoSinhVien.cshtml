@@ -1,0 +1,53 @@
+﻿@model QLKTX.Models.SinhVien
+
+@{
+    ViewBag.Title = "Thông tin sinh viên";
+}
+
+<h2>Thông tin sinh viên</h2>
+
+<table class="table table-borderless">
+    <tbody>
+        <tr>
+            <td class="float-end"><strong>Họ và tên:</strong></td>
+            <td>@Model.HoSV @Model.TenSV</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>MSSV:</strong></td>
+            <td>@Model.MSSV</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Lớp:</strong></td>
+            <td>@Model.Lop</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Giới tính:</strong></td>
+            <td>@Model.GioiTinh</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Ngày sinh:</strong></td>
+            @{ var ngaySinh = Model.NgaySinh?.ToString("dd/MM/yyyy");}
+            <td>@ngaySinh</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Nơi sinh:</strong></td>
+            <td>@Model.NoiSinh</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Địa chỉ:</strong></td>
+            <td>@Model.DiaChi</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Email:</strong></td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Số điện thoại:</strong></td>
+            <td>@Model.SoDienThoai</td>
+        </tr>
+        <tr>
+            <td class="float-end"><strong>Số CCCD:</strong></td>
+            <td>@Model.SoCCCD</td>
+        </tr>
+    </tbody>
+</table>

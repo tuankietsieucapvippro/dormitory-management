@@ -1,0 +1,73 @@
+﻿@model IEnumerable<QLKTX.Models.Phong>
+@using QLKTX.Areas.Admin.Controllers
+
+@{
+    PhongsController controller = new PhongsController();
+}
+<table class="table">
+    <thead class="table-active">
+        <!-- Áp dụng class cho hàng tiêu đề -->
+        <tr>
+            <th>
+                Tên phòng<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th>
+                Tòa nhà<span style="float: right; font-weight: normal">|</span>
+            </th>
+            <th>
+                Loại phòng<span style="float: right; font-weight: normal">|</span>
+            </th>
+            <th>
+                Đơn giá<span style="float: right; font-weight: normal">|</span>
+            </th>
+            <th>
+                Số lượng giường<span style="float: right; font-weight: normal">|</span>
+            </th>
+            <th>
+                Số người đang ở<span style="float: right; font-weight: normal">|</span>
+            </th>
+            <th>
+                Giới tính<span style="float: right; font-weight: normal">|</span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.TenPhong
+            </td>
+            <td>
+                @item.ToaNha.TenToaNha
+            </td>
+            <td>
+                @item.LoaiPhong.TenLoaiPhong
+            </td>
+            <td>
+                @item.LoaiPhong.DonGia
+            </td>
+            <td>
+                @item.SoLuongGiuong
+            </td>
+            <td>
+                @{
+                    // Gọi hàm tính số sinh viên đang ở trong phòng và lưu vào biến soSinhVien
+                    int soSinhVien = controller.SoSinhVienDangO(item.PhongID);
+                }
+                @soSinhVien
+            </td>
+            <td>
+                @item.LoaiPhong.GioiTinh
+            </td>
+            <td>
+                <a class="btn btn-primary editBtn" data-id="@item.PhongID"><i class='bx bxs-pencil'></i></a>
+                <a class="btn btn-danger deleteBtn" data-id="@item.PhongID"><i class='bx bxs-trash'></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+

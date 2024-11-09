@@ -1,0 +1,145 @@
+﻿@model IEnumerable<QLKTX.Models.Phong>
+@using QLKTX.Areas.Admin.Controllers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+    PhongsController controller = new PhongsController();
+}
+
+@section tail {
+    <script>
+    $(document).ready(function () {
+        // Sự kiện click vào nút mở modal
+        $("#addPhongBtn").click(function () {
+            $.get('@Url.Action("Create", "Phongs")', function (data) {
+                $('#myModal').html(data);
+                $('#createRoomModal').modal('show');
+            });
+        });
+
+        // Sự kiện submit form thêm mới phòng
+        $(document).ready(function () {
+            $('#createRoomModal form').submit(function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '/Admin/Phongs/Create',
+                    data: formData,
+                    success: function (response) {
+                        $('#createRoomModal').modal('hide');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    });
+    </script>
+    <script>
+        //EditRoom
+        $(document).on("click", ".editBtn", function () {
+            var id = $(this).data("id");
+            var url = "/Admin/Phongs/Edit/" + id;
+            $.get(url, function (data) {
+                $('#myModal').html(data);
+                $('#EditRoomModal').modal('show');
+            });
+        });
+        $(document).on("click", "#confirmEditBtn", function () {
+            var id = $(this).data("id");
+            var formData = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Phongs/Edit/" + id,
+                data: formData,
+                success: function (result) {
+                    window.location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+
+    <script>
+        //DeleteRoom
+        $(document).on("click", ".deleteBtn", function () {
+            var id = $(this).data("id");
+            var url = "/Admin/Phongs/Delete/" + id;
+            $.get(url, function (data) {
+                $('#myModal').html(data);
+                $('#DeleteModal').modal('show');
+            });
+        });
+        $(document).on("click", "#confirmDeleteBtn", function () {
+            var id = $(this).data("id");
+            var token = $(this).data("token");
+            var formData = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Phongs/Delete/" + id,
+                data: formData,
+                success: function (result) {
+                    window.location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#toaNhaFilter, #loaiPhongFilter").change(function () {
+            // Lấy giá trị của các bộ lọc
+                var toaNhaId = $("#toaNhaFilter").val();
+                var loaiPhongId = $("#loaiPhongFilter").val();
+
+            // Gửi yêu cầu AJAX đến backend để lấy danh sách phòng dựa trên bộ lọc
+                $.get('@Url.Action("FilterRooms", "Phongs")', { toaNhaId: toaNhaId, loaiPhongId: loaiPhongId }, function (data) {
+                    $("#roomListContainer").html(data);
+                });
+            });
+        });
+        $(document).ready(function () {
+
+                var toaNhaId = $("#toaNhaFilter").val();
+                var loaiPhongId = $("#loaiPhongFilter").val();
+
+            // Gửi yêu cầu AJAX đến backend để lấy danh sách phòng dựa trên bộ lọc
+                $.get('@Url.Action("FilterRooms", "Phongs")', { toaNhaId: toaNhaId, loaiPhongId: loaiPhongId }, function (data) {
+                    $("#roomListContainer").html(data);
+                });
+
+        });
+    </script>
+}
+
+<div id="myModal"></div>
+
+
+<div class="filter">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="ToaNhaID">Tòa nhà</label>
+            @Html.DropDownList("ToaNhaID", ViewBag.TOANHAID as SelectList, "Tất cả", new { @class = "form-control", @id = "toaNhaFilter" })
+        </div>
+        <div class="form-group col-md-4">
+            <label for="PhongID">Loại phòng</label>
+            @Html.DropDownList("PhongID", ViewBag.LOAIPHONGID as SelectList, "Tất cả", new { @class = "form-control", @id = "loaiPhongFilter" })
+        </div>
+    </div>
+</div>
+
+<p>
+    <button class="btn btn-primary" id="addPhongBtn">Thêm mới phòng</button>
+</p>
+<div id="roomListContainer">
+
+</div>

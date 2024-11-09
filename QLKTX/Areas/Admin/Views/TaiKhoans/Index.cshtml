@@ -1,0 +1,47 @@
+﻿@model IEnumerable<QLKTX.Models.TaiKhoan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách tài khoản</h2>
+
+<p>
+    @Html.ActionLink("Thêm tài khoản", "Create")
+</p>
+<table class="table">
+    <thead class="table-active">
+        <tr>
+            <th>
+                Tên đăng nhập
+            </th>
+            <th>
+                Mật khẩu
+            </th>
+            <th>
+                Vai trò
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDangNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VaiTro.TenVaiTro)
+            </td>
+            <td>
+                <a class="btn btn-primary" href="@Url.Action("Edit","TaiKhoans", new { id = item.TaiKhoanID })"><i class='bx bxs-pencil'></i></a>
+                <a class="btn btn-danger" href="@Url.Action("Delete","TaiKhoans", new { id = item.TaiKhoanID })"><i class='bx bxs-trash'></i></a>
+            </td>
+        </tr>
+    }
+
+</table>

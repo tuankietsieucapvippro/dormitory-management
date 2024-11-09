@@ -1,0 +1,152 @@
+﻿@model IEnumerable<QLKTX.Models.ToaNha>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .selectBtn:hover {
+        background-color: #dddddd
+    }
+
+    .selectBtn.activeBuilding {
+        background: linear-gradient(to right, rgb(106, 106, 255), rgb(44, 44, 255));
+        color: white;
+    }
+
+    .mybtn {
+        padding: .375rem .75rem;
+        cursor: pointer;
+    }
+
+    .addbtn {
+        background: linear-gradient(to right, rgb(106, 106, 255), rgb(44, 44, 255));
+        color: white !important;
+    }
+</style>
+<div class="row justify-content-center m-0 mt-3 mb-3" id="cardRow">
+    @foreach (var toaNha in Model)
+    {
+        <div class="col-lg-2 col-md-4 col-sm-6 pb-2 px-1">
+            <div class="card selectBtn" data-id="@toaNha.ToaNhaID">
+                <div class="card-body">
+                    <h5 class="card-title">Tòa @toaNha.TenToaNha</h5>
+                    <a class="mybtn detailBtn" data-id="@toaNha.ToaNhaID"><i class='bx bxs-detail'></i></a>
+                    <a class="mybtn editBtn" data-id="@toaNha.ToaNhaID"><i class='bx bxs-pencil'></i></a>
+                    <a class="mybtn deleteBtn" data-id="@toaNha.ToaNhaID"><i class='bx bxs-trash'></i></a>
+                </div>
+            </div>
+        </div>
+    }
+    <a type="button" class="btn h-25 addbtn" id="createBtn">
+        <i class='bx bx-plus'></i>
+    </a>
+</div>
+<div id="listPhong"></div>
+<div id="myModal"></div>
+
+@section tail{
+    <script>
+        $(document).ready(function () {
+            $('.selectBtn:first').addClass('activeBuilding');
+            $('.selectBtn').click(function () {
+                $('.selectBtn').removeClass('activeBuilding');
+                $(this).addClass('activeBuilding');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var url = "/Admin/ToaNhas/GetPhongByToaNhaId/1";
+            $.get(url, function (data) {
+                $('#listPhong').html(data);
+            });
+        });
+        $(document).on("click", ".selectBtn", function () {
+            var id = $(this).data("id");
+            var url = "/Admin/ToaNhas/GetPhongByToaNhaId/" + id;
+            $.get(url, function (data) {
+                $('#listPhong').html(data);
+            });
+        });
+    </script>
+    <script>
+        $(document).on("click", ".editBtn", function () {
+            var id = $(this).data("id");
+            var url = "/Admin/ToaNhas/Edit/" + id;
+            $.get(url, function (data) {
+                $('#myModal').html(data);
+                $('#EditModal').modal('show');
+            });
+        });
+        $(document).on("click", "#confirmEditBtn", function () {
+            var id = $(this).data("id");
+            var formData = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: "/Admin/ToaNhas/Edit/" + id,
+                data: formData,
+                success: function (result) {
+                    window.location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).on("click", ".deleteBtn", function () {
+            var id = $(this).data("id");
+            var url = "/Admin/ToaNhas/Delete/" + id;
+            $.get(url, function (data) {
+                $('#myModal').html(data);
+                $('#DeleteModal').modal('show');
+            });
+        });
+        $(document).on("click", "#confirmDeleteBtn", function () {
+            var id = $(this).data("id");
+            var token = $(this).data("token");
+            var formData = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: "/Admin/ToaNhas/Delete/" + id,
+                data: formData,
+                success: function (result) {
+                    window.location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+    <script>
+        $("#createBtn").click(function () {
+            $.get('@Url.Action("Create", "ToaNhas")', function (data) {
+                $('#myModal').html(data);
+                $('#CreateModal').modal('show');
+            });
+        });
+
+        $(document).ready(function () {
+            $('#CreateModal form').submit(function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '/Admin/ToaNhas/Create',
+                    data: formData,
+                    success: function (response) {
+                        $('#CreatModal').modal('hide');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+}

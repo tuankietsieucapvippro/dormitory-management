@@ -1,0 +1,60 @@
+﻿@model IEnumerable<QLKTX.Models.SinhVien>
+
+<table class="table">
+    <thead class="table-active">
+        <tr>
+            <th>
+                Họ và tên<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th>
+                MSSV<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th>
+                Giới tính<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th>
+                Email<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th>
+                Số điện thoại<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th>
+                Phòng<span style="float:right;font-weight:normal">|</span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoSV) @Html.DisplayFor(modelItem => item.TenSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MSSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDienThoai)
+            </td>
+            <td>
+                @{ var tenPhong = new QLKTX.Areas.Admin.Controllers.SinhViensController().GetPhong(item.SinhVienID); }
+                @tenPhong
+            </td>
+            <td>
+                <a class="btn btn-primary" href="@Url.Action("Edit","SinhViens", new { id = item.SinhVienID })"><i class='bx bxs-pencil'></i></a>
+                <a class="btn btn-danger" href="@Url.Action("Delete","SinhViens", new { id = item.SinhVienID })"><i class='bx bxs-trash'></i></a>
+                @Html.ActionLink("Xếp phòng", "XepPhong", "SinhViens", new { area = "Admin", sinhVienID = item.SinhVienID }, new { @class = "btn btn-primary" })
+            <a class="btn btn-primary" href="@Url.Action("TaoTheLuuTru", "SinhViens", new { area = "Admin", sinhVienID = item.SinhVienID })">
+                <i class='bx bx-file'></i>
+            </a>
+            </td>
+        </tr>
+    }
+
+</table>

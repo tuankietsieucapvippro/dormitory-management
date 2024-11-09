@@ -1,0 +1,34 @@
+﻿<div class="modal fade" id="CreateModal" tabindex="-1" role="dialog" aria-labelledby="CreateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CreateModalLabel">Thêm mới tòa nhà</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form thêm mới tòa nhà -->
+                @using (Html.BeginForm("Create", "ToaNhas", FormMethod.Post, new { id = "createForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        <label for="TenToaNha" class="control-label">Tên tòa nhà</label>
+                        <input type="text" name="TenToaNha" id="TenToaNha" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="MoTa" class="control-label">Mô tả</label>
+                        <input type="text" name="MoTa" id="MoTa" class="form-control" required />
+                    </div>
+                }
+            </div>
+            <div class="modal-footer justify-content-center">
+                <!-- Button đóng modal -->
+                <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Đóng</button>
+                <!-- Button gửi form -->
+                <button type="submit" class="btn btn-primary ml-2" form="createForm">Thêm mới</button>
+            </div>
+        </div>
+    </div>
+</div>

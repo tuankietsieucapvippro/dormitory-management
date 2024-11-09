@@ -1,0 +1,58 @@
+﻿@model QLKTX.Models.Phong
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Phong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongGiuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongGiuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiPhong.TenLoaiPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiPhong.TenLoaiPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToaNha.TenToaNha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToaNha.TenToaNha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PhongID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

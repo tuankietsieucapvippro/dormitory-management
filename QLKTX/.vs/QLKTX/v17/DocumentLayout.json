@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TuanKiet\\QLKTX\\QLKTX\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|d:\\tuankiet\\qlktx\\qlktx\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|d:\\tuankiet\\qlktx\\qlktx\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|D:\\TuanKiet\\QLKTX\\QLKTX\\views\\account\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|solutionrelative:views\\account\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|D:\\TuanKiet\\QLKTX\\QLKTX\\views\\site\\capnhathoso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|solutionrelative:views\\site\\capnhathoso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|D:\\TuanKiet\\QLKTX\\QLKTX\\controllers\\sitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88955B9A-54DF-4EF7-847D-DE29612F87F5}|QLKTX.csproj|solutionrelative:controllers\\sitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\TuanKiet\\QLKTX\\QLKTX\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "D:\\TuanKiet\\QLKTX\\QLKTX\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-09T11:32:03.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CapNhatHoSo.cshtml",
+              "DocumentMoniker": "D:\\TuanKiet\\QLKTX\\QLKTX\\Views\\Site\\CapNhatHoSo.cshtml",
+              "RelativeDocumentMoniker": "Views\\Site\\CapNhatHoSo.cshtml",
+              "ToolTip": "D:\\TuanKiet\\QLKTX\\QLKTX\\Views\\Site\\CapNhatHoSo.cshtml",
+              "RelativeToolTip": "Views\\Site\\CapNhatHoSo.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T11:28:53.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SiteController.cs",
+              "DocumentMoniker": "D:\\TuanKiet\\QLKTX\\QLKTX\\Controllers\\SiteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SiteController.cs",
+              "ToolTip": "D:\\TuanKiet\\QLKTX\\QLKTX\\Controllers\\SiteController.cs",
+              "RelativeToolTip": "Controllers\\SiteController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwFYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T11:28:54.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DangKy.cshtml",
+              "DocumentMoniker": "D:\\TuanKiet\\QLKTX\\QLKTX\\Views\\Account\\DangKy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\DangKy.cshtml",
+              "ToolTip": "D:\\TuanKiet\\QLKTX\\QLKTX\\Views\\Account\\DangKy.cshtml",
+              "RelativeToolTip": "Views\\Account\\DangKy.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADsAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T11:28:54.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\TuanKiet\\QLKTX\\QLKTX\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\TuanKiet\\QLKTX\\QLKTX\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T11:28:54.825Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -167,4 +167,4 @@ VALUES
     (N'Phạm Văn', N'Lộc', N'63123462', N'63.NNA-1', N'Nam', '2003-08-08', 'Khánh Hòa', N'Nha Trang, Khánh Hòa', N'pvloc0808@gmail.com', N'0123456796', N'012345678907', 8),
     (N'Vũ Phạm Đình', N'Thái', N'63123463', N'63.CNTT-2', N'Nam', '2003-09-09', N'TP.Hồ Chí Minh', 'TP.Hồ Chí Minh', N'vpdthai0909@gmail.com', N'0123456797', N'012345678908', 9),
     (N'Hoàng Xuân', N'Vinh', N'63123464', N'63.CNTT-2', N'Nam', '2003-10-10', N'TP.Hồ Chí Minh', 'TP.Hồ Chí Minh', N'hxvinh1010@gmail.com', N'0123456798', N'012345678909', 10),
-    (N'Trần Văn', N'Cao', N'63123457', N'62.CNTT-1', N'Nam', '2002-03-03', 'Khánh Hòa', N'Ninh Hòa, Khánh Hòa', N'tvcao0303@gmail.com', N'0123456791', N'012345678902', 11),
+    (N'Trần Văn', N'Cao', N'63123457', N'62.CNTT-1', N'Nam', '2002-03-03', 'Khánh Hòa', N'Ninh Hòa, Khánh Hòa', N'tvcao0303@gmail.com', N'0123456791', N'012345678902', 11)

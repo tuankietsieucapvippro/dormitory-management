@@ -157,13 +157,14 @@ GO
 
 INSERT INTO SinhVien (HoSV, TenSV, MSSV, Lop, GioiTinh, NgaySinh, NoiSinh, DiaChi, Email, SoDienThoai, SoCCCD, TaiKhoanID)
 VALUES
-    (N'Nguyễn Công', N'Phương', N'63135148', N'63.CNTT-3', N'Nam', '2003-07-01', N'Bà Rịa - Vũng tàu', N'Ninh Hòa, Khánh Hòa', N'ncphuong0107@gmail.com', N'0123456789', N'012345678900', 1),
-    (N'Bùi Tiến', N'Dũng', N'63123456', N'63.CNTT-3', N'Nam', '2003-02-02', 'Khánh Hòa', N'Nha Trang, Khánh Hòa', N'btdung0202@gmail.com', '0123456790', N'012345678901', 2),
-    (N'Trần Văn', N'Cao', N'63123457', N'62.CNTT-1', N'Nam', '2002-03-03', 'Khánh Hòa', N'Ninh Hòa, Khánh Hòa', N'tvcao0303@gmail.com', N'0123456791', N'012345678902', 3),
+    (N'Nguyễn Hùng Tuấn', N'Kiệt', N'63132184', N'63.CNTT-3', N'Nam', '2003-06-29', N'Bắc Giang', N'Ninh Hòa, Khánh Hòa', N'tuankiet2962003@gmail.com', N'0523059456', N'012345678912', 1),
+    (N'Nguyễn Công', N'Phương', N'63135148', N'63.CNTT-3', N'Nam', '2003-07-01', N'Bà Rịa - Vũng tàu', N'Ninh Hòa, Khánh Hòa', N'ncphuong0107@gmail.com', N'0123456789', N'012345678900', 2),
+    (N'Bùi Tiến', N'Dũng', N'63123456', N'63.CNTT-3', N'Nam', '2003-02-02', 'Khánh Hòa', N'Nha Trang, Khánh Hòa', N'btdung0202@gmail.com', '0123456790', N'012345678901', 3),
     (N'Nguyễn Thị', N'Thủy', N'63123458', N'63.CNTT-2', N'Nữ', '2003-04-04', 'Khánh Hòa', N'Nha Trang, Khánh Hòa', N'ntthuy0404@gmail.com', N'0123456792', N'012345678903', 4),
     (N'Nguyễn Kiều Cẩm', N'Thơ', N'62123459', N'62.NNA-1', N'Nữ', '2002-05-05', 'TP.Hồ Chí Minh', N'Nha Trang, Khánh Hòa', N'nkctho0505@gmail.com', N'0123456793', N'012345678904', 5),
     (N'Nguyễn Hùng Tuấn', N'Kiệt', N'63132184', N'63.CNTT-3', N'Nam', '2003-06-29', 'Khánh Hòa', N'Ninh Sim, Khánh Hòa', N'nhtkiet2906@gmail.com', N'0123456794', N'012345678905', 6),
     (N'Vũ Thanh', N'Vân', N'63123461', N'63.NNA-2', N'Nữ', '2003-07-07', 'TP.Hồ Chí Minh', N'Nha Trang, Khánh Hòa', N'vtvan0707@gmail.com', N'0123456795', N'012345678906', 7),
     (N'Phạm Văn', N'Lộc', N'63123462', N'63.NNA-1', N'Nam', '2003-08-08', 'Khánh Hòa', N'Nha Trang, Khánh Hòa', N'pvloc0808@gmail.com', N'0123456796', N'012345678907', 8),
     (N'Vũ Phạm Đình', N'Thái', N'63123463', N'63.CNTT-2', N'Nam', '2003-09-09', N'TP.Hồ Chí Minh', 'TP.Hồ Chí Minh', N'vpdthai0909@gmail.com', N'0123456797', N'012345678908', 9),
-    (N'Hoàng Xuân', N'Vinh', N'63123464', N'63.CNTT-2', N'Nam', '2003-10-10', N'TP.Hồ Chí Minh', 'TP.Hồ Chí Minh', N'hxvinh1010@gmail.com', N'0123456798', N'012345678909', 10)
+    (N'Hoàng Xuân', N'Vinh', N'63123464', N'63.CNTT-2', N'Nam', '2003-10-10', N'TP.Hồ Chí Minh', 'TP.Hồ Chí Minh', N'hxvinh1010@gmail.com', N'0123456798', N'012345678909', 10),
+    (N'Trần Văn', N'Cao', N'63123457', N'62.CNTT-1', N'Nam', '2002-03-03', 'Khánh Hòa', N'Ninh Hòa, Khánh Hòa', N'tvcao0303@gmail.com', N'0123456791', N'012345678902', 11),

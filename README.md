@@ -27,7 +27,7 @@ The program includes role-based access control, and each user is only allowed to
 
 * Dowload the project and open it with Visual Studio.
 * Set up the database through SQL Server.
-* "Modify the data source according to your machine name in the Web.config file."
+* Modify the data source according to your machine name in the Web.config file.
 * Run the Index.cshtml in the Views/Home to experience the student interface.
 * Run the Index.cshtml in the Areas/Admin/Views/Login to experience the manager interface.
 

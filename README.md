@@ -1,4 +1,4 @@
-# Home appliances management
+# Dormitory management
 
 ## Project Overview
 
